@@ -1,0 +1,46 @@
+{% block navbar %}
+    <!-- Navbar Menu -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-xl">
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse w-100">
+                <ul class="nav navbar-nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'siteapp:site_home' %}">WOOK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">POSTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CATEGORIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SOBRE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog:blog_home' %}">CONTATOS</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand order-first order-md-0 mx-0" href="{% url 'blog:blog_home' %}"><strong>wook</strong><span class="font-weight-light">blog</span></a>
+            <div class="collapse navbar-collapse w-100">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-rss"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock navbar %}

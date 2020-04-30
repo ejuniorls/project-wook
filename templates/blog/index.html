@@ -1,0 +1,133 @@
+{% extends "blog/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container-xl">
+        <div class="row flex-xl-nowrap">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="http://themes.themegoods.com/grandblog/demo/wp-content/uploads/2015/07/photo-1437915015400-137312b61975.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row flex-xl-nowrap">
+            <div class="post-info w-100 text-center mt-5">
+                <h2 class="">Lorem ipsum dosect</h2>
+                <hr class="title_break slider">
+                <div class="slide_post_excerpt">
+                    <p>Lorem ipsum dosectetur adipisicing elit, sed do.Lorem ipsum dolor sit amet, consectetur Nulla
+                        fringilla purus at leo dignissim congue. Mauris elementum accumsan leo vel tempor. …</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row flex-xl-nowrap mt-5" id="page_content_wrapper">
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 sidebar_content">
+
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="post_header">
+                            <figure class="figure">
+                                <img src="https://via.placeholder.com/1000x500?text=post"
+                                     class="d-block w-100 post-thumbnail"
+                                     alt="...">
+                            </figure>
+
+                            <div class="post_header_title">
+                                <div class="post_info_cat">
+                                    <span>
+                                        <a href="#">Category 1</a> &nbsp;/
+                                        <a href="#">Category 1</a>
+                                    </span>
+                                </div>
+                                <h4><a href="#" title="Fashion Model Shoot">Post Title</a></h4>
+                                <hr class="title_break small">
+                                <div class="post_detail post_date">
+                                    <span class="post_info_date">
+                                        <span>July 22, 2015</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <p>Lorem ipsum dosectetur adipisicing elit, sed do.Lorem ipsum dolor sit amet,
+                                consectetur Nulla
+                                fringilla purus at leo dignissim congue. Mauris elementum accumsan leo vel tempor.
+                                Sit amet
+                                cursus nisl aliquam. Aliquam et elit eu nunc rhoncus viverra quis at felis. Sed
+                                do.Lorem
+                                ipsum dolor sit amet, consectetur Nulla fringilla purus Lorem ipsum dosectetur
+                                adipisicing
+                                elit at leo dignissim congue. Mauris elementum accumsan leo vel tempor</p>
+                            <p>Aliquam et elit eu nunc rhoncus viverra quis at felis et netus et malesuada fames ac
+                                turpis
+                                egestas. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et
+                                magnis dis parturient montes.</p>
+                            <hr class="readmore_break">
+                            <div class="post_button_wrapper">
+                                <a class="readmore" href="#">Continue Reading</a>
+                            </div>
+                            <div class="post_info_comment">
+                                <a href="#">72 Comments</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% for post in post_list %}
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div class="post_header">
+                                <figure class="figure">
+                                    {% if post.cover %}
+                                    <img src="{{ post.cover.url }}"
+                                         class="d-block w-100 post-card-img-top"
+                                         alt="{{ post.cover }}">
+                                    {% else %}
+                                    <img src="https://via.placeholder.com/1000x500?text=post"
+                                         class="d-block w-100 post-thumbnail"
+                                         alt="...">
+                                    {% endif %}
+                                </figure>
+
+                                <div class="post_header_title">
+                                    <div class="post_info_cat">
+                                    <span>
+                                        <a href="#">{{ post.get_category_display }}</a>
+                                    </span>
+                                    </div>
+                                    <h4><a href="{% url 'blog:post_detail' post.slug %}" title="">{{ post.title }}</a></h4>
+                                    <hr class="title_break small">
+                                    <div class="post_detail post_date">
+                                    <span class="post_info_date">
+                                        <span>{{ post.created_on }}</span>
+                                    </span>
+                                    </div>
+                                </div>
+
+                                <p>{{ post.content|slice:":200" }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 sidebar-wrapper">
+                <div class="sidebar my-3">
+                    <div class="text-center"><h5>about me</h5></div>
+                    <img src="https://via.placeholder.com/300x300?text=photo" class="d-block w-100" alt="...">
+                    <p class="my-3">Aliquam et elit eu nunc rhoncus viverra quis at felis et netus et malesuada fames ac
+                        turpis egestas. Aenean commodo ligula eget dolor.</p>
+                    <a href="#">teste</a>
+
+                    <div class="text-center"><h5>subscribe</h5></div>
+                    <div class="text-center"><h5>categories</h5></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

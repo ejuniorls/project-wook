@@ -1,0 +1,86 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <div class="container-xl">
+        <div class="row flex-xl-nowrap">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://themegoods-cdn-pzbycso8wng.stackpathdns.com/grandblog/demo/wp-content/uploads/2015/07/15.jpg"
+                             class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row flex-xl-nowrap">
+            <div class="post-info w-100 text-center mt-5">
+                <h1 class="">{{ post.title }}</h1>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur Nulla fringilla purus at leo dignissim
+                    congue.</p>
+                <span>Postado em {{ post.created_on }}</span>
+            </div>
+        </div>
+
+        <div class="row flex-xl-nowrap mt-5" id="page_content_wrapper">
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 sidebar_content">
+
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="post-header">
+                            <figure class="figure">
+                                <img src="{{ post.cover.url }}"
+                                     class="d-block w-100 post-thumbnail"
+                                     alt="...">
+                                <figcaption class="figure-caption text-center">A caption for the above image.
+                                </figcaption>
+                            </figure>
+                            <p>{{ post.content | safe | linebreaks }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
+                        <img class="rounded-circle" src="https://via.placeholder.com/100x100?text=photo">
+                        <span>AUTHOR</span>
+                        <h5>Clarice Wolf</h5>
+                        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum
+                            id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                            condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h3>Leave A Reply</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Post comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 sidebar-wrapper">
+                <div class="sidebar my-3">
+                    <div class="text-center"><h5>about me</h5></div>
+                    <img src="http://theme-sphere.com/smart-blog/wp-content/uploads/2015/10/DeathtoStock_LA27111.jpg" class="d-block w-100" alt="...">
+                    <p class="my-3">Aliquam et elit eu nunc rhoncus viverra quis at felis et netus et malesuada fames ac
+                        turpis egestas. Aenean commodo ligula eget dolor.</p>
+                    <a href="#">teste</a>
+
+                    <div class="text-center"><h5>subscribe</h5></div>
+                    <div class="text-center"><h5>categories</h5></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
